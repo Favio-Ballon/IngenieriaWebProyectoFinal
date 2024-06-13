@@ -27,4 +27,50 @@
     }
 }
 
+@media (min-width: 992px) {
+
+    .banner_img{
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+
+    .banner img {
+        display: block;
+    }
+    
+    
+
+    .banner img:first-child{
+        width: 23%;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        padding-right: 10px;
+    }
+
+    .banner img:nth-child(2){
+        display: unset;
+        margin: 0;
+        width: 50%;
+        height: 70%;
+        top: 50%;
+        left: -10%;
+    }   
+
+    .banner img:last-child{
+        display: unset;
+        width: 23%;
+        height: 70%;
+        top: 50%;
+        right: 0;
+        padding-left: 10px;
+        
+    }
+
+    
+
+}
+
 
