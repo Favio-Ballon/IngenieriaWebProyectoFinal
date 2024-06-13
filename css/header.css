@@ -81,24 +81,61 @@ header {
     font-size: 1rem;
 }
 
-.nav-links {
-    display: flex;
-    list-style-type: none;
-}
 
-.nav-links li {
-    margin-left: 10px;
-}
-
-.nav-links li a {
+.menu li a {
     color: #dad5b7;
     text-decoration: none;
-    padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.nav-links li a:hover {
+.menu li a:hover {
     background-color: #c2b79b; 
     color: #243757; 
+}
+
+
+
+@media (min-width: 768px){
+    .logo {
+        font-size: 24px;
+    }
+
+    .search-bar {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+
+    .menu-mobile-label {
+        display: none; 
+    }
+
+    .menu ul {
+        display: flex; 
+        position: static;
+        flex-direction: row;
+        justify-content: space-around;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .menu ul li {
+        display: inline;
+        width: auto;
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .menu ul li a {
+        padding: 10px 15px;
+    }
+
+    .menu input[type="checkbox"]:checked + ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu input[type="checkbox"]:checked + ul li:nth-child(3) {
+        display: block;
+    }
 }

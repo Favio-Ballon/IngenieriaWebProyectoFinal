@@ -29,7 +29,7 @@
     object-fit: cover; 
 }
 
-.cursos_item div {
+.cursos_item div:last-child {
     padding: 20px; 
     text-align: left;
 }
@@ -43,4 +43,56 @@
 .cursos_item p {
     color: #665e52; 
     line-height: 1.5;
+}
+
+@media (min-width: 768px){
+    .cursos {
+        padding: 40px 30px;
+    }
+
+    .cursos h2 {
+        font-size: 2.5rem;
+    }
+
+    .cursos_item {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        background-color: #c2b79b; 
+        margin-bottom: 40px; 
+        border-radius: 10px;
+        overflow: hidden; 
+        padding: 20px;
+    }
+
+
+    .cursos_item img {
+        width: 100%;
+        height: auto; 
+        object-fit: cover;
+        margin-right: 20px;
+        overflow: hidden;
+    }
+
+    .cursos_item div {
+        width: 40%;
+        height: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .cursos_item div:last-child {
+        width: 55%;
+        padding: 0;
+        text-align: left;
+    }
+
+    .cursos_item h3 {
+        font-size: 2rem;
+    }
+
+    .cursos_item p {
+        font-size: 1.2rem;
+    }
 }
