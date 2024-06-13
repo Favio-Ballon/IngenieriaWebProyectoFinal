@@ -1,0 +1,46 @@
+
+.cursos {
+    padding: 30px 20px;
+    background-color: #dad5b7; 
+    text-align: center; 
+}
+
+
+.cursos h2{
+    margin-bottom: 40px; 
+    font-size: 2rem;
+}
+
+
+.cursos_item {
+    display: flex; 
+    flex-direction: column; 
+    background-color: #c2b79b; 
+    margin-bottom: 30px; 
+    border-radius: 10px;
+    overflow: hidden; 
+    
+
+}
+
+.cursos_item img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+}
+
+.cursos_item div {
+    padding: 20px; 
+    text-align: left;
+}
+
+.cursos_item h3 {
+    color: #243757; 
+    margin-bottom: 10px; 
+    font-size: 1.5rem;
+}
+
+.cursos_item p {
+    color: #665e52; 
+    line-height: 1.5;
+}

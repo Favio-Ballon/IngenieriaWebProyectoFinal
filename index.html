@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Cursos</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/cursos.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">Paragon</h1> 
+        <form class="search-bar">
+            <input type="text" placeholder="Buscar cursos...">
+        </form>
+        <nav class="menu">
+            <label class="menu-mobile-label" for="menu-switch">
+                <i class="fas fa-bars"></i>
+            </label>
+            <input id="menu-switch" type="checkbox">
+            <ul>
+                <li><a href="#"><i class="fas fa-angle-down"></i> Categorías</a></li>
+                <li><a href="#" class="btn">Iniciar Sesión</a></li>
+                <li><a href="#" class="btn">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="banner">
+        <div class="banner_img">
+            <img src="img/banner1.png" alt="banner 1">
+            <img src="img/banner2.png" alt="banner 2">
+            <img src="img/banner3.png" alt="banner 3">
+        </div>
+    </section>
+
+    <section class="cursos">
+        <h2>Cursos populares</h2>
+        <div class="cursos_item">
+            <img src="img/curso1.png" alt="curso 1">
+            <div>
+                <h3>Programación desde Cero</h3>
+                <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
+                    proporcionar una base sólida en los conceptos fundamentales de la programación, utilizando un
+                    lenguaje de programación accesible como Python. A lo largo del curso, los estudiantes desarrollarán
+                    habilidades prácticas mediante la creación de pequeños proyectos y la resolución de problemas.</p>
+            </div>
+        </div>
+        <div class="cursos_item">
+            <img src="img/curso2.webp" alt="curso 2">
+            <div>
+                <h3>Programación Básica</h3>
+                <p>Este curso está destinado a personas con conocimientos básicos o experiencia previa mínima en
+                    programación. Su objetivo es profundizar en los conceptos fundamentales y prácticos de la
+                    programación, utilizando un lenguaje de programación como Python. Los estudiantes aprenderán a
+                    desarrollar programas más complejos y a aplicar buenas prácticas de programación.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Paragon. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

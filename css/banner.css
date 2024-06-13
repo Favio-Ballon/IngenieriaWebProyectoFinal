@@ -1,0 +1,19 @@
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #665e52; /* color5 */
+    color: #dad5b7; /* color3 */
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.banner img:first-child {
+    display: unset;
+}
+
+
+
