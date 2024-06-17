@@ -13,15 +13,14 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/cursos.css">
+    <link rel="stylesheet" href="css/misCursos.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
     <header>
         <h1 class="logo">Paragon</h1>
-        <form class="search-bar" action="cursosBuscadorUsuario.html">
+        <form class="search-bar" action="cursosBuscador.html">
             <input type="text" placeholder="Buscar cursos...">
         </form>
         <nav class="menu">
@@ -43,16 +42,9 @@
             </ul>
         </nav>
     </header>
-    <section class="banner">
-        <div class="banner_img">
-            <img src="img/banner1.png" alt="banner 1">
-            <img src="img/banner1.png" alt="banner 2">
-            <img src="img/banner3.png" alt="banner 3">
-        </div>
-    </section>
 
     <section class="cursos">
-        <h2>Cursos populares</h2>
+        <h2>Mis Cursos</h2>
         <div class="cursos_item">
             <div>
                 <img src="img/curso1.png" alt="curso 1">
@@ -61,9 +53,10 @@
                 <h3>Programación desde Cero</h3>
                 <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
                     proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
+                <p>autor</p>
+                <div class="progress-container"><div class="progress-bar"></div></div>
             </div>
         </div>
-        <hr>
         <div class="cursos_item">
             <div>
                 <img src="img/curso2.webp" alt="curso 2">
@@ -73,6 +66,20 @@
                 <p>Este curso está destinado a personas con conocimientos básicos o experiencia previa mínima en
                     programación. Su objetivo es profundizar en los conceptos fundamentales y prácticos de la
                     programación.</p>
+                <p>autor</p>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+            </div>
+        </div>
+        <div class="cursos_item">
+            <div>
+                <img src="img/curso1.png" alt="curso 1">
+            </div>
+            <div>
+                <h3>Programación desde Cero</h3>
+                <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
+                    proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
+                <p>autor</p>
+                <div class="progress-container"><div class="progress-bar"></div></div>
             </div>
         </div>
     </section>
@@ -81,18 +88,5 @@
         <p>&copy; 2024 Paragon. Todos los derechos reservados.</p>
     </footer>
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var items = document.querySelectorAll('.cursos_item');
-        items.forEach(function (item, index) {
-            item.addEventListener('click', function () {
-                // Example URLs - replace these with the actual URLs you want to use
-                var urls = ['cursoUsuario.html', '#'];
-                window.location.href = urls[index];
-            });
-        });
-    });
-</script>
 
 </html>
