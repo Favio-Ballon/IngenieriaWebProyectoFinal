@@ -78,6 +78,36 @@
     margin-top: 10px;
 }
 
+.course-details div button{
+
+    background-color: #3a5f6f;
+    /* color4 */
+    color: #c2b79b;
+    /* color2 */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+
+
+.lesson_items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+
+.lesson_items h4{
+    align-self: unset;
+    margin: 0;
+}
+
+@media (min-width: 768px){
+}
 
 
 
@@ -104,4 +134,27 @@
         flex-direction: column;
         justify-content: space-between;
     }
+
+    .course-details div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }   
+
+    .lesson_items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+
+    .lesson_items h4{
+        align-self: unset;
+        margin: 0;
+    }
+
+    
+
+
 }
