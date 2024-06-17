@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Plataforma</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <link rel="stylesheet" href="css/cursoDescripcion.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">Paragon</h1>
+        <form class="search-bar">
+            <input type="text" placeholder="Buscar cursos...">
+        </form>
+        <nav class="menu">
+            <label class="menu-mobile-label" for="menu-switch">
+                <i class="fas fa-bars"></i>
+            </label>
+            <input id="menu-switch" type="checkbox">
+            <ul>
+                <li><a href="#"><i class="fas fa-angle-down"></i> Categorías</a></li>
+                <li><a href="inicio.html" class="btn">Iniciar Sesión</a></li>
+                <li><a href="registro.html" class="btn">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <div class="course-container">
+        <div class="course-header">
+            <img src="img/curso1.png" alt="Imagen del curso">
+            <div class="course-details">
+                <h1 class="course-title">Programación desde Cero</h1>
+                <p class="course-description">Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
+                    proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
+                <p class="course-author">Autor: autor</p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h2>Contenido del curso</h2>
+        </div>
+        <div class="course-lessons">
+            <div class="lesson" onclick="toggleVideo('video1')">
+                <i class="fas fa-angle-down"></i>Lección 1
+                <div id="video1" class="lesson-video">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VxrIZGQfxmE?si=gvf0HF2ktgf9nhfP" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="lesson" onclick="toggleVideo('video2')">
+                <i class="fas fa-angle-down"></i>Lección 2
+                <div id="video2" class="lesson-video">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VxrIZGQfxmE?si=gvf0HF2ktgf9nhfP" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- Añadir más lecciones según sea necesario -->
+        </div>
+    </div>
+
+
+    <script>
+        function toggleVideo(videoId) {
+            var video = document.getElementById(videoId);
+            if (video.style.display === "none" || video.style.display === "") {
+                video.style.display = "block";
+            } else {
+                video.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
