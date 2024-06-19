@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta utf="-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Cursos</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cursosAdmin.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">Paragon</h1>
+        <form class="search-bar" action="cursosBuscador.html">
+            <input type="text" placeholder="Buscar cursos..."   >
+        </form>
+        <nav class="menu">
+            <label class="menu-mobile-label" for="menu-switch">
+                <i class="fas fa-bars"></i>
+            </label>
+            <input id="menu-switch" type="checkbox">
+            <ul>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-angle-down"></i> Categorías</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Género 1</a></li>
+                        <li><a href="#">Género 2</a></li>
+                        <li><a href="#">Género 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="btn">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cursos">
+        <div id="cursos_titulo">
+            <h2>Cursos</h2>
+            <button class="btn" id="btnAñadirCurso">Agregar Curso</button>
+        </div>
+        <div class="cursos_item">
+            <div>
+                <img src="img/curso1.png" alt="curso 1">
+            </div>
+            <div>
+                <h3>Programación desde Cero</h3>
+                <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
+                    proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
+                <p>autor</p>
+                <div class="curso_botones">
+                    <button class="btn" id="btnEditarCurso">Editar</button>
+                    <button class="btn" id="btnBorrarCurso">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="cursos_item">
+            <div>
+                <img src="img/curso2.webp" alt="curso 2">
+            </div>
+            <div>
+                <h3>Programación Básica</h3>
+                <p>Este curso está destinado a personas con conocimientos básicos o experiencia previa mínima en
+                    programación. Su objetivo es profundizar en los conceptos fundamentales y prácticos de la
+                    programación.</p>
+                <p>autor</p>
+                <div class="curso_botones">
+                    <button class="btn" id="btnEditarCurso">Editar</button>
+                    <button class="btn" id="btnBorrarCurso">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="cursos_item">
+            <div>
+                <img src="img/curso1.png" alt="curso 1">
+            </div>
+            <div>
+                <h3>Programación desde Cero</h3>
+                <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
+                    proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
+                <p>autor</p>
+                <div class="curso_botones">
+                    <button class="btn" id="btnEditarCurso">Editar</button>
+                    <button class="btn" id="btnBorrarCurso">Borrar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Paragon. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

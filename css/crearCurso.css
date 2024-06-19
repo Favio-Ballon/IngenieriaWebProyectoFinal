@@ -1,0 +1,12 @@
+.crearCursos{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.crearCursos form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
