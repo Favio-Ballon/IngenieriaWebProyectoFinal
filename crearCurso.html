@@ -45,24 +45,24 @@
 
         <form action="crearCurso.php" method="POST" enctype="multipart/form-data">
             <div>
-            <label for="nombre">Nombre del curso</label>
+            <label for="nombre">Nombre del curso:</label>
             <input type="text" name="nombre" id="nombre" required>
             </div>
             <div>
-                <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="descripcion" required></textarea>
-            </div>
-            <div>
-                <label for="autor">Autor</label>
+                <label for="autor">Autor:</label>
                 <input type="text" name="autor" id="autor" required>
             </div>
             <div>
-                <label for="imagen">Imagen</label>
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" required></textarea>
+            </div>
+            <div id="crear_curso_imagen">
+                <label for="imagen">Imagen:</label>
                 <input type="file" name="imagen" id="imagen" required>
             </div>
             <div>
-                <button type="submit">Crear curso</button>
-                <button>Cancelar</button>
+                <button type="submit" class="btn">Crear curso</button>
+                <button class="btn">Cancelar</button>
             </div>
         </form>
     </section>
