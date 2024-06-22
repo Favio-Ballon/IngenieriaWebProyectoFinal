@@ -72,6 +72,9 @@ async function setLinkBuscador() {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const query = searchInput.value.trim();
+        if (query === '') {
+            return
+        }
         window.location.href = `cursosBuscador.html?search=${query}`;
     });
 }
