@@ -12,7 +12,20 @@
     }
 
     const url = new URL(window.location.href);
-    const buscado = url.searchParams.get("search");
-    await cargarCursos(buscado);
+    const id = url.searchParams.get("id");
+    await cargarCurso(id);
     document.body.style.display = 'block';
 })();
+
+async function cargarCurso(id) {
+    const curso = await getCursoById(id);
+    const cursosContainer = document.querySelector('.course-header');
+    const img = cursosContainer.querySelector('img');
+    const titulo = cursosContainer.querySelector('.course-title');
+    const descripcion = cursosContainer.querySelector('.course-description');
+    const autor = cursosContainer.querySelector('.course-author');
+    titulo.innerHTML = curso[0].titulo;
+    descripcion.innerHTML = curso[0].descripcion;
+    autor.innerHTML = `Autor: ${curso[0].autor}`;
+    img.src = curso[0].imagen_path;
+}

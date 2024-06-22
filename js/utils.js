@@ -112,3 +112,16 @@ function setHeaderAdmin(UserInSession) {
         logout();
     });
 }
+
+async function getCursoById(id){
+    try{
+        const response = await fetch(`http://localhost:4000/cursos/${id}`);
+        if(!response.ok){
+            return;
+        }
+        const curso = await response.json();
+        return curso;
+    }catch(error){
+        console.error(error);
+    }
+}
