@@ -10,20 +10,23 @@
 
     <link rel="stylesheet" href="css/inicio.css">
 </head>
-<body>
+<body style="display: none;">
     <div class="login">
         <h1 >Paragon</h1>
         <div class="login_div">
-            <form action="#" method="POST">
+            <form>
                 <input type="text" id="username" name="username" placeholder="Usuario">
-
+                <p id="validation-username">Debe ingresar su nombre de usuario</p>
                 <input type="email" id="email" name="email" placeholder="Email">
-                
+                <p id="validation-email">Debe ingresar su nombre de usuario</p>
                 <input type="password" id="password" name="password" placeholder="Contraseña">
-                
-                <button type="submit" class="btn">Registrarse</button>
+                <p id="validation-password">Debe ingresar su nombre de usuario</p>
+                <button type="button" class="btn">Registrarse</button>
             </form>
         </div>
     </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/registro.js"></script>
 </body>
 </html>
