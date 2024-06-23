@@ -15,8 +15,7 @@
     cargar2cursos();
     cursoListener();
     setLinkBuscador();
-    
-    document.body.style.display = 'block';
+
 })();
 
 async function cargar2cursos() {
@@ -48,6 +47,7 @@ async function cargar2cursos() {
     } else {
         console.log('No cursos available');
     }
+    document.body.style.display = 'block';
 }
 
 function cursoListener(){

@@ -167,6 +167,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: unset;
+        width: 100%;
+    }
+
+    .course-final{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .course-header img {
@@ -178,6 +185,7 @@
         margin-left: 20px;
         margin-top: 20px;
         max-width: 100%;
+        width: 100%;
         text-align: left;
         display: flex;
         flex-direction: column;

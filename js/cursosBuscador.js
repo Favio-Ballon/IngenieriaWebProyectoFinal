@@ -14,6 +14,7 @@
     const url = new URL(window.location.href);
     const buscado = url.searchParams.get("search");
     await cargarCursos(buscado);
+    cargarCategorias();
     setLinkBuscador();
     setCursoListener();
     document.body.style.display = 'block';

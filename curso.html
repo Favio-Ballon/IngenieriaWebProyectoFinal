@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="display: none;">
 
     <header>
         <h1 class="logo">Paragon</h1>
@@ -27,7 +27,7 @@
             <input id="menu-switch" type="checkbox">
             <ul id="header_items">
                 <li class="dropdown">
-                    <a href="#"><i class="fas fa-angle-down"></i> Categorías</a>
+                    <a><i class="fas fa-angle-down"></i> Categorías</a>
                     <ul class="dropdown-content">
                     </ul>
                 </li>
@@ -44,7 +44,9 @@
                 <h1 class="course-title">Programación desde Cero</h1>
                 <p class="course-description">Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
                     proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
-                <p class="course-author">Autor: autor</p>
+                <div id="course-final">
+                    <p class="course-author">Autor: autor</p>
+                </div>
             </div>
         </div>
         <hr>
@@ -52,33 +54,9 @@
             <h2>Contenido del curso</h2>
         </div>
         <div class="course-lessons">
-            <div class="lesson" onclick="toggleVideo('video1')">
-                <i class="fas fa-angle-down"></i>Lección 1
-                <div id="video1" class="lesson-video">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VxrIZGQfxmE?si=gvf0HF2ktgf9nhfP" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="lesson" onclick="toggleVideo('video2')">
-                <i class="fas fa-angle-down"></i>Lección 2
-                <div id="video2" class="lesson-video">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VxrIZGQfxmE?si=gvf0HF2ktgf9nhfP" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <!-- Añadir más lecciones según sea necesario -->
+            
         </div>
     </div>
-
-    <script src="js/utils.js"></script>
-    <script>
-        function toggleVideo(videoId) {
-            var video = document.getElementById(videoId);
-            if (video.style.display === "none" || video.style.display === "") {
-                video.style.display = "block";
-            } else {
-                video.style.display = "none";
-            }
-        }
-    </script>
 
     <script src="js/utils.js"></script>
     <script src="js/curso.js"></script>

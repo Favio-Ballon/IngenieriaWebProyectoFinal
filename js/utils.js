@@ -46,9 +46,21 @@ async function cargarCategorias() {
     const selectCategorias = document.querySelector('.dropdown-content');
     categorias.forEach(categoria => {
         const option = `
-            <li><a href="index.html" data-id=${categoria.id}>${categoria.nombre}</a></li>
+            <li><a data-id=${categoria.id}>${categoria.nombre}</a></li>
         `;
         selectCategorias.innerHTML += option;
+    });
+    setCategoriasListener();
+}
+
+function setCategoriasListener() {
+    const categorias = document.querySelectorAll('.dropdown-content li a');
+    categorias.forEach(categoria => {
+        categoria.addEventListener('click', function (e) {
+            e.preventDefault();
+            const id = categoria.dataset.id;
+            window.location.href = `cursosBuscador.html?id=${id}`;
+        });
     });
 }
 
@@ -117,6 +129,7 @@ function setHeaderAdmin(UserInSession) {
 }
 
 async function getCursoById(id){
+    console.log(id);
     try{
         const response = await fetch(`http://localhost:4000/cursos/${id}`);
         if(!response.ok){
