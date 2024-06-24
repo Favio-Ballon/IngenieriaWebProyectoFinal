@@ -17,72 +17,31 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-<body>
+<body style="display: none;">
+    
     <header>
-        <h1 class="logo">Paragon</h1>
-        <form class="search-bar" action="cursosBuscador.html">
-            <input type="text" placeholder="Buscar cursos...">
+        <a href="index.html" id="titulo_link"><h1 class="logo">Paragon</h1></a>
+        <form id="searchForm" class="search-bar">
+            <input id="searchInput" type="text" placeholder="Buscar cursos..." >
         </form>
         <nav class="menu">
             <label class="menu-mobile-label" for="menu-switch">
                 <i class="fas fa-bars"></i>
             </label>
             <input id="menu-switch" type="checkbox">
-            <ul>
+            <ul id="header_items">
                 <li class="dropdown">
-                    <a href="#"><i class="fas fa-angle-down"></i> Categorías</a>
+                    <a><i class="fas fa-angle-down"></i> Categorías</a>
                     <ul class="dropdown-content">
-                        <li><a href="#">Género 1</a></li>
-                        <li><a href="#">Género 2</a></li>
-                        <li><a href="#">Género 3</a></li>
                     </ul>
                 </li>
-                <li><a href="misCursos.html" class="btn">Mis Cursos</a></li>
-                <li><a href="#" class="btn">Usuario</a></li>
-                <li><a href="index.html" class="btn" id="btn-salir">salir</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="cursos">
         <h2>Mis Cursos</h2>
-        <div class="cursos_item">
-            <div>
-                <img src="img/curso1.png" alt="curso 1">
-            </div>
-            <div>
-                <h3>Programación desde Cero</h3>
-                <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
-                    proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
-                <p>autor</p>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-            </div>
-        </div>
-        <div class="cursos_item">
-            <div>
-                <img src="img/curso2.webp" alt="curso 2">
-            </div>
-            <div>
-                <h3>Programación Básica</h3>
-                <p>Este curso está destinado a personas con conocimientos básicos o experiencia previa mínima en
-                    programación. Su objetivo es profundizar en los conceptos fundamentales y prácticos de la
-                    programación.</p>
-                <p>autor</p>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-            </div>
-        </div>
-        <div class="cursos_item">
-            <div>
-                <img src="img/curso1.png" alt="curso 1">
-            </div>
-            <div>
-                <h3>Programación desde Cero</h3>
-                <p>Este curso está diseñado para personas sin experiencia previa en programación. El objetivo es
-                    proporcionar una base sólida en los conceptos fundamentales de la programación.</p>
-                <p>autor</p>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-            </div>
-        </div>
+        
     </section>
 
     <footer>
@@ -90,6 +49,7 @@
     </footer>
 
     <script src="js/utils.js"></script>
+    <script src="js/misCursos.js"></script>
 </body>
 
 </html>

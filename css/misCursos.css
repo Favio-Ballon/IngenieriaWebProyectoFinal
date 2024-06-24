@@ -89,7 +89,9 @@
 
 .cursos_item div .progress-container .progress-bar{
     width: 75%;
+    padding: 10px 0;
 }
+
 
 
 @media (min-width: 768px) {
@@ -116,6 +118,10 @@
     .cursos_item div {
         width: 50%;
     }
+
+    .cursos_item div .progress-container .progress-bar{
+        padding: 10px 0;
+    }
 }
 
 @media (min-width: 992px) {
@@ -124,7 +130,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
         position: relative;
         padding-left: 0;
@@ -185,4 +191,16 @@
         width: 75%;
     }
 
+    div.progress-bar{
+        padding: 3px 0;
+    }
+    
+    .cursos_item div .progress-container{
+        padding: 0;
+        width: 100%;
+    }
+
+    .cursos_item div .progress-container .progress-bar{
+        padding: 3px 0;
+    }
 }
