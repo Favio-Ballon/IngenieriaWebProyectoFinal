@@ -1,9 +1,11 @@
 (async function () {
     const userInSession = getUserInSession();
+    var admin = false;
     if (userInSession) {
         if (userInSession[0]['is_admin']) {
-            window.location.href = 'cursosAdmin.html';
-            return;
+            setHeaderAdmin(userInSession);
+            admin = true;
+            
         } else {
             setHeaderUser(userInSession);
         }
@@ -17,6 +19,9 @@
     cargarCategorias();
     setLinkBuscador();
     setCursoListener();
+    if(admin){
+        setCursosAdmin();
+    }
     document.body.style.display = 'block';
 })();
 
@@ -39,7 +44,7 @@ async function cargarCursos(buscado) {
             <div>
                 <img src="${curso.imagen_path}" alt="imagencurso">
             </div>
-            <div>
+            <div id="cursos_item_details" data-id=${curso.id}>
                 <h3>${curso.titulo}</h3>
                 <p>${curso.descripcion}</p>
                 <p>Autor: ${curso.autor}</p>

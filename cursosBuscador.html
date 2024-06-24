@@ -19,9 +19,11 @@
 
 <body style="display: none;">
     <header>
-        <a href="index.html" id="titulo_link"><h1 class="logo">Paragon</h1></a>
+        <a href="index.html" id="titulo_link">
+            <h1 class="logo">Paragon</h1>
+        </a>
         <form id="searchForm" class="search-bar">
-            <input id="searchInput" type="text" placeholder="Buscar cursos..." >
+            <input id="searchInput" type="text" placeholder="Buscar cursos...">
         </form>
         <nav class="menu">
             <label class="menu-mobile-label" for="menu-switch">
@@ -39,29 +41,18 @@
     </header>
 
     <section class="cursos">
-        <h2>Resultados para "busqueda"</h2>
-        
+        <div id="cursos_titulo">
+            <h2>Resultados para "busqueda"</h2>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Paragon. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="js/cursosAdmin.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/cursosBuscador.js"></script>
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var items = document.querySelectorAll('.cursos_item');
-        items.forEach(function (item, index) {
-            item.addEventListener('click', function () {
-                // Example URLs - replace these with the actual URLs you want to use
-                var urls = ['curso.html', '#'];
-                window.location.href = urls[index];
-            });
-        });
-    });
-</script>
 
 </html>

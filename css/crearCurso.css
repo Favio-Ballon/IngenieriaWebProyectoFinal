@@ -87,6 +87,13 @@
     color: #243757; /* Color del texto del placeholder */
 }
 
+#validation-titulo, #validation-descripcion, #validation-imagen, #validation-autor{
+    align-self: center;
+    color: red;
+    margin-top: 0;
+    display: none;
+}
+
 @media (min-width: 992px) {
 
     .crearCursos {

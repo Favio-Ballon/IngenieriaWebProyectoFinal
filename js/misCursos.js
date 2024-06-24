@@ -35,9 +35,9 @@ async function setMisCursos(){
     const usuario_id = userInSession[0].id; 
     const cursos = await getMisCursos(usuario_id);
     const cursosContainer = document.querySelector('.cursos');
-    const cursosHTML = []; // Array para almacenar los fragmentos de HTML
+    const cursosHTML = []; // Array para almacenar
 
-    // Iterar sobre los cursos y construir el HTML
+    // Iterar sobre los cursos
     for (const curso of cursos) {
         const porcentaje = await getPorcentaje(curso.id);
         const cursoBus = `
@@ -53,13 +53,13 @@ async function setMisCursos(){
             </div>
           </div>
         `;
-        cursosHTML.push(cursoBus); // Agregar el fragmento HTML al array
+        cursosHTML.push(cursoBus); // Agregar html al array
     }
 
-    // Actualizar el contenido del contenedor cursosContainer
+    // Actualizar el HTML
     cursosContainer.innerHTML = cursosHTML.join('');
 
-    // Llamar a setCursoListener después de agregar los cursos al DOM
+    // set istener a los cursos
     setCursoListener();
 }
 

@@ -44,31 +44,37 @@
     <section class="crearCursos">
         <h1>Nuevo Curso</h1>
 
-        <form action="crearCurso.php" method="POST" enctype="multipart/form-data">
+        <form enctype="multipart/form-data">
             <div>
-            <label for="nombre">Nombre del curso:</label>
-            <input type="text" name="nombre" id="nombre" required>
+                <label for="nombre">Nombre del curso:</label>
+                <input type="text" name="nombre" id="titulo">
             </div>
+            <p id="validation-titulo">Debe ingresar el titulo del cruso</p>
             <div>
                 <label for="autor">Autor:</label>
-                <input type="text" name="autor" id="autor" required>
+                <input type="text" name="autor" id="autor">
             </div>
+            <p id="validation-autor">Debe ingresar el nombre del autor</p>
             <div>
                 <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" id="descripcion" required></textarea>
+                <textarea name="descripcion" id="descripcion"></textarea>
             </div>
+            <p id="validation-descripcion">Debe ingresar una descripcion</p>
             <div id="crear_curso_imagen">
                 <label for="imagen">Imagen:</label>
-                <input type="file" name="imagen" id="imagen" required>
+                <!-- solo imagenes -->
+                <input type="file" name="imagen" id="imagen" accept="image/*" >
             </div>
+            <p id="validation-imagen">Debe ingresar una imagen</p>
             <div>
-                <button type="submit" class="btn">Crear curso</button>
-                <button class="btn">Cancelar</button>
+                <button type="button" class="btn" onclick="createCurso()">Crear curso</button>
+                <button type="button" class="btn" >Cancelar</button>
             </div>
         </form>
+        
     </section>
     <script src="js/utils.js"></script>
     <script src="js/crearCurso.js"></script>
 </body>
-
+    
 </html>
