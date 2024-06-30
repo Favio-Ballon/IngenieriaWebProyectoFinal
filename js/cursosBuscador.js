@@ -18,25 +18,28 @@
     await cargarCursos(buscado);
     cargarCategorias();
     setLinkBuscador();
-    setCursoListener();
     if(admin){
         setCursosAdmin();
+        setCursoListenerAdmin();
+    }else{
+        setCursoListener();
     }
     document.body.style.display = 'block';
 })();
 
 async function cargarCursos(buscado) {
-    //if buscado es undefined
-    console.log(buscado);
-    if (!buscado) {
-        window.location.href = 'index.html';
-        return;
-    }
-    const cursos = await getCursosBuscados(buscado);
     const cursosContainer = document.querySelector('.cursos');
     const titulo = cursosContainer.querySelector('h2');
     const buscador = document.querySelector('.search-bar input');
-    titulo.innerHTML = `Resultados para "${buscado}"`;
+    console.log(buscado);
+    let cursos = null;
+    if (!buscado) {
+        cursos = await getCursos();
+        titulo.innerHTML = `Cursos`;
+    }else{
+        cursos = await getCursosBuscados(buscado);
+        titulo.innerHTML = `Resultados para "${buscado}"`;
+    }
     buscador.value = buscado;
     cursos.forEach(curso => {
         const cursoBus = `
@@ -87,6 +90,17 @@ function setCursoListener(){
             e.preventDefault();
             const id = curso.dataset.id;
             window.location.href = `curso.html?id=${id}`;
+        });
+    });
+}
+
+function setCursoListenerAdmin(){
+    const cursos = document.querySelectorAll('.cursos_item');
+    cursos.forEach(curso => {
+        curso.addEventListener('click', function(e){
+            e.preventDefault();
+            const id = curso.dataset.id;
+            window.location.href = `cursoAdmin.html?id=${id}`;
         });
     });
 }

@@ -141,3 +141,7 @@ async function getCursoById(id){
         console.error(error);
     }
 }
+
+function volver(){
+    window.history.back();
+}

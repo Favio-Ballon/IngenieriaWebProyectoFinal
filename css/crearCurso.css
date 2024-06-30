@@ -87,7 +87,7 @@
     color: #243757; /* Color del texto del placeholder */
 }
 
-#validation-titulo, #validation-descripcion, #validation-imagen, #validation-autor{
+#validation-titulo, #validation-descripcion, #validation-imagen, #validation-autor, #validation-contenido{
     align-self: center;
     color: red;
     margin-top: 0;

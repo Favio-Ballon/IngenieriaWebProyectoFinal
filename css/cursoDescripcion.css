@@ -179,6 +179,7 @@
     .course-header img {
         max-width: 50%;
         border-radius: 10px;
+        max-height: 300px;
     }
 
     .course-details {
@@ -214,4 +215,4 @@
     
 
 
-}
+}   

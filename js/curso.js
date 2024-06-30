@@ -2,7 +2,7 @@
     const userInSession = getUserInSession();
     if (userInSession) {
         if (userInSession[0]['is_admin']) {
-            window.location.href = 'cursosAdmin.html';
+            window.location.href = 'index.html';
             return;
         } else {
             setHeaderUser(userInSession);
