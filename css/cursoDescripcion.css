@@ -73,7 +73,7 @@
 
 
 
-.lesson-video {
+.lesson-video, .lesson-text{
     display: none;
     margin-top: 10px;
 }
@@ -147,6 +147,15 @@
     margin-left: 10px;
 }
 
+.lesson-text{
+    overflow-wrap: break-word;
+    background-color: white;
+    color:  #243757;
+    border-radius: 2px;
+    padding: 1em;
+
+}
+
 @media(min-width: 768px){
     #lecciones_titulo{
         display: flex;
@@ -211,6 +220,7 @@
         align-self: unset;
         margin: 0;
     }
+
 
     
 

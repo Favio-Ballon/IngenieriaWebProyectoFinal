@@ -21,7 +21,7 @@
     color: #243757; /* Color del texto del título */
 }
 
-.crearCursos form div {
+.crearCursos form div:not(#edit-view, #edit-view div, #btn-leccion){
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
@@ -39,9 +39,11 @@
 .crearCursos form div input:focus, .crearCursos form div textarea:focus {
     outline: none;
     border-color: #3a5f6f; /* Color del borde al enfocar */
-}
+}   
 
-.crearCursos form div:last-child {
+
+#btn-leccion{
+    display: flex;
     margin-top: 30px;
     justify-content: end;
 }
@@ -52,6 +54,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
 
 .crearCursos div button.btn {
     background-color: #3a5f6f; /* Color del botón principal */
@@ -94,10 +97,36 @@
     display: none;
 }
 
+#leccion-tipo{
+    width: 70%;
+}
+
+#edit-view{
+    width: 90%;
+    background-color: white;
+    padding: 1em;
+    border: 1px solid #665e52; 
+    border-radius: 5px;
+    color: #243757; 
+    margin: 0 auto;
+}
+
+#editorjs{
+   width: 100%;
+}
+
+
+
+
 @media (min-width: 992px) {
 
     .crearCursos {
         width: 50%;
     }
 
+    #edit-view{
+        width: 100%;
+    }
+
 }
+

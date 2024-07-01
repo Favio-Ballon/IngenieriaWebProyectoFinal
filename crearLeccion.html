@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/crearCurso.css">
+    <link rel="stylesheet" href="css/crearCurso.css"> 
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
@@ -44,24 +44,62 @@
 
         <form>
             <div>
-            <label for="nombre">Nombre de la lección:</label>
-            <input type="text" name="nombre" id="nombre" required>
+                <label for="nombre">Nombre de la lección:</label>
+                <input type="text" name="nombre" id="nombre" required>
             </div>
             <p id="validation-titulo">Debe ingresar el titulo del cruso</p>
             <div>
-                <label for="link">Link del video:</label>
-                <input type="text" name="link" id="link" required>
+                <label for="tipo" id="tipo">Tipo de lección:</label>
+                <div id="leccion-tipo">
+                    <input type="radio" name="tipo" value="video" id="video" checked>
+                    <label for="video">Video</label>
+                    <input type="radio" name="tipo" value="texto" id="texto">
+                    <label for="texto">Texto</label>
+                </div>
             </div>
-            <p id="validation-contenido">Debe ingresar el nombre del autor</p>
-            <div>
-                <button type="submit" class="btn" id="btn-crear">Crear curso</button>
+            <div id="link">
+                <label for="link">Link del video:</label>
+                <input type="text" name="link" id="linkVideo" required>
+            </div>
+            
+            <div id="edit-view" style="display: none;">
+                <div id="editorjs"></div>
+            </div>
+
+            <p id="validation-contenido">Debe ingresar el contenido</p>
+
+            <div id="btn-leccion">
+                <button type="button" class="btn" id="btn-crear">Crear curso</button>
                 <button class="btn" onclick="volver()">Cancelar</button>
             </div>
         </form>
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+
+    <!-- Biblioteca del Editor propiamente dicho -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+
+
+    <!-- Traductor del codigo que genera el editor para transformarlo en HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/editorjs-html@3.4.0/build/edjsHTML.js"></script>
+
+    <script src="js/editor.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/crearLeccion.js"></script>
     <script src="js/editarLeccion.js"></script>
+
 </body>
 
 </html>

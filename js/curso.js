@@ -61,34 +61,53 @@ async function cargarLecciones(id) {
             const mis_curso_id = await getMisCursosId(getUserInSession()[0].id, id);
             const visto = await getLeccionVista(leccion.id);
             console.log(visto)
+            const tipo = leccion.tipo
+            let contenido = '';
+            if (tipo) {
+                const edjsParser = edjsHTML();
+                let htmlData = edjsParser.parse(JSON.parse(leccion.contenido));
+
+                let html = '';
+
+                for (const code of htmlData) {
+                    html += code;
+                }
+
+
+                contenido = `
+                <div id="${leccion.id}" class="lesson-text">
+                    ${html}
+                </div>
+                `
+            } else {
+                contenido = `
+                <div id="${leccion.id}" class="lesson-video">
+                    <iframe width="100%" height="315"
+                    src="${leccion.contenido}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+                `
+            }
             if (visto) {
                 leccionHtml = `
                 <div class="lesson" data-id=${leccion.id} onclick="toggleVideo('${leccion.id}')">
                         <div class="lesson_items">
-                            <h4><i class="fas fa-angle-down"></i>${leccion.id} </h4>
+                            <h4><i class="fas fa-angle-down"></i>${leccion.titulo} </h4>
                             <input id="menu-switch" type="checkbox" disabled checked>
                         </div>
-                        <div id="${leccion.id}" class="lesson-video">
-                            <iframe width="100%" height="315"
-                                src="https://www.youtube.com/embed/VxrIZGQfxmE?si=gvf0HF2ktgf9nhfP" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
+                            ${contenido}
+
                     </div>
                 `;
-            }else{
+            } else {
                 leccionHtml = `
                 <div class="lesson" data-id=${leccion.id} onclick="toggleVideo('${leccion.id}')">
                         <div class="lesson_items">
-                            <h4><i class="fas fa-angle-down"></i>${leccion.id} </h4>
+                            <h4><i class="fas fa-angle-down"></i>${leccion.titulo} </h4>
                             <input id="menu-switch-${leccion.id}" data-id=${mis_curso_id} type="checkbox" disable>
                         </div>
-                        <div id="${leccion.id}" class="lesson-video">
-                            <iframe width="100%" height="315"
-                                src="https://www.youtube.com/embed/VxrIZGQfxmE?si=gvf0HF2ktgf9nhfP" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
+                            ${contenido}
                     </div>
                 `;
             }
@@ -102,6 +121,7 @@ async function cargarLecciones(id) {
             </div>
         `;
         }
+        console.log(leccionHtml);
         leccionesContainer.innerHTML += leccionHtml;
     });
     document.body.style.display = 'block';
@@ -207,7 +227,7 @@ async function getMisCursosId(usuario_id, id) {
     try {
         const response = await fetch(`http://localhost:4000/miscursos/curso/${id}/usuario/${usuario_id}/id`);
         const data = await response.json();
-        console.log("Mis cursos id :",data.id);
+        console.log("Mis cursos id :", data.id);
         return data.id;
     } catch (error) {
         console.error(error);
@@ -255,8 +275,8 @@ function toggleVideo(id) {
         } else {
             video.style.display = 'block';
             const input = document.getElementById(`menu-switch-${id}`);
-            if(input){
-                if(input.checked){
+            if (input) {
+                if (input.checked) {
                     return;
                 }
                 const mis_curso_id = input.getAttribute('data-id');
