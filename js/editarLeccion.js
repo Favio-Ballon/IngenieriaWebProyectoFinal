@@ -1,4 +1,5 @@
 let texto = '';
+let curso_id = 0;
 
 (async function(){
     const url = new URL(window.location.href);
@@ -34,6 +35,7 @@ async function setLeccionDatos(leccion){
     const link = document.getElementById('linkVideo');
     titulo.value = leccion.titulo;
     tipo = leccion.tipo;
+    curso_id = leccion.curso_id;
     console.log(leccion)
 
     if(tipo){
@@ -44,6 +46,10 @@ async function setLeccionDatos(leccion){
     }
 
     setRadio();
+    document.getElementById('btn-cancelar').addEventListener('click', function(e) {
+        e.preventDefault(); // Previene el comportamiento por defecto del botón (si es que está dentro de un formulario, por ejemplo)
+        window.history.back(); // Regresa a la página anterior en el historial del navegador
+    });
 }
 
 async function getLeccioneById(id) {
@@ -95,7 +101,8 @@ async function updateLeccion(leccion){
         });
         
         if (response.ok) {
-            volver();
+
+            window.location.href = `cursoAdmin.html?id=${curso_id}`;
         }
     } catch (err) {
         console.error(err);

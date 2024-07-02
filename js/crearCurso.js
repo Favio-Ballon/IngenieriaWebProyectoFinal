@@ -69,7 +69,8 @@ async function createCurso() {
                 const response = await updateCurso(curso, id);
                 console.log(response);
                 if (response) {
-                    window.history.back();
+                    //Se vuelve a la pagina anterior
+                    volver();
                 }
 
 

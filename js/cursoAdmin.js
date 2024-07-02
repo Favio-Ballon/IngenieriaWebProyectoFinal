@@ -54,12 +54,27 @@ async function getLecciones(id) {
 async function cargarLecciones(id) {
     const lecciones = await getLecciones(id);
     const leccionesContainer = document.querySelector('.course-lessons');
+    let index = 0;
+    leccionesContainer.innerHTML = '';
     lecciones.forEach(async leccion => {
-        const leccionHtml = `
+        console.log("index:");
+        let flechas;
 
+        if (index === 0) {
+            flechas = `<i class="fas fa-angle-down" data-id=${leccion.id}></i>`;
+        } else if (index === lecciones.length - 1) {
+            flechas = `<i class="fas fa-angle-up" data-id=${leccion.id}></i>`;
+        } else {
+            flechas = `<i class="fas fa-angle-up" data-id=${leccion.id}></i><i class="fas fa-angle-down" data-id=${leccion.id}></i>`;
+        }
+
+        index +=1;
+
+
+        const leccionHtml = `
         <div class="lesson">
                 <div class="lesson_items">
-                    <h4><i class="fas fa-angle-down"></i>${leccion.titulo}</h4>
+                    <h4>${flechas}${leccion.titulo}</h4>
                     <div class="lessons_btn">
                         <button class="btn editar-btn" data-id=${leccion.id}>Editar</button>
                         <button class="btn eliminar-btn" data-id=${leccion.id}>Eliminar</button>
@@ -83,6 +98,7 @@ async function cargarLecciones(id) {
     });
 
     document.body.style.display = 'block';
+    setMover();
 }
 
 function editarLeccion(e) {
@@ -110,3 +126,64 @@ async function eliminarLeccion(e) {
 }
 
 
+async function setMover() {
+    const abajo = document.querySelectorAll('.fa-angle-down');
+    abajo.forEach(search => {
+        search.addEventListener('click', function (e) {
+            e.preventDefault();
+            moverAbajo(search);
+        });
+    });
+    
+    const arriba = document.querySelectorAll('.fa-angle-up');
+    arriba.forEach(search => {
+        search.addEventListener('click', function (e) {
+            e.preventDefault();
+            moverArriba(search);
+        });
+    });
+}
+
+async function moverAbajo(search){
+    const id = search.dataset.id;
+    try{
+        const response = await fetch(`http://localhost:4000/lecciones/down/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+        if(!response.ok){
+            return;
+        }
+        url = new URL(window.location.href);
+        curso_id = url.searchParams.get("id");
+        cargarLecciones(curso_id);
+    }
+    catch(error){
+        console.error(error);
+    }
+}
+
+async function moverArriba(search){
+    const id = search.dataset.id;
+    try{
+        const response = await fetch(`http://localhost:4000/lecciones/up/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+        if(!response.ok){
+            return;
+        }
+        url = new URL(window.location.href);
+        curso_id = url.searchParams.get("id");
+        cargarLecciones(curso_id);
+    }
+    catch(error){
+        console.error(error);
+    }
+}

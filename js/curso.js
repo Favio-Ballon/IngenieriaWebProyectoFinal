@@ -113,7 +113,7 @@ async function cargarLecciones(id) {
             }
         } else {
             leccionHtml = `
-        <div class="lesson">
+        <div class="lesson"  >
                 <i class="fas fa-angle-down"></i>${leccion.titulo}
                 <div id="${leccion.titulo}" class="lesson-video">
                     <iframe width="100%" height="315" src="${leccion.contenido}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -300,3 +300,5 @@ async function updateLeccionVista(leccion_id, mis_curso_id) {
         console.error(error);
     }
 }
+
+

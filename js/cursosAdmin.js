@@ -81,3 +81,4 @@ async function borrarCurso(id){
         console.error(error);
     }
 }
+

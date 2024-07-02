@@ -142,6 +142,11 @@ async function getCursoById(id){
     }
 }
 
-function volver(){
-    window.history.back();
+function volver() {
+    if (document.referrer) {
+        window.location.href = document.referrer;
+    } else {
+        // Redirige al usuario a una página predeterminada si no hay referrer
+        window.location.href = 'index.html';
+    }
 }
