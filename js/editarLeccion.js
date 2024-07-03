@@ -129,8 +129,8 @@ async function updateLeccionButton(){
         validationTitulo.innerHTML = 'El titulo debe tener al menos 5 caracteres';
         validationTitulo.style.display = 'block';
         isValid = false;
-    }else if(titulo.length > 100){
-        validationTitulo.innerHTML = 'El titulo debe tener menos de 30 caracteres';
+    }else if(titulo.length > 77){
+        validationTitulo.innerHTML = 'El titulo debe tener menos de 75 caracteres';
         validationTitulo.style.display = 'block';
         isValid = false;
     }else{

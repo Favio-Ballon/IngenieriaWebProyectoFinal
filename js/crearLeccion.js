@@ -177,7 +177,7 @@ async function createLeccion(leccion){
 }
 
 function getVideoId(url) {
-    var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+    var videoid = url.match(/(?:https?:\/\/)?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)\/(?:watch\?v=|embed\/|)([^\s&]+)/);
     console.log(JSON.stringify(videoid));
     if (videoid != null)
         return videoid[1];

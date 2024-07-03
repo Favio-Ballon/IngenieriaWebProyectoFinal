@@ -143,9 +143,6 @@
     margin: 0;
 }
 
-.lessons_btn button:last-child{
-    margin-left: 10px;
-}
 
 .lesson-text{
     overflow-wrap: break-word;
@@ -156,6 +153,18 @@
 
 }
 
+.lessons_btn{
+    display: flex;
+    flex-direction: column; 
+    align-self: center;
+}
+
+.lessons_btn button:first-child{
+    margin-bottom: 5px;
+}
+
+
+
 @media(min-width: 768px){
     #lecciones_titulo{
         display: flex;
@@ -165,6 +174,18 @@
 
     #lecciones_titulo button{
         width: unset;
+    }
+
+    .lessons_btn{
+        flex-direction: row;
+    }
+
+    .lessons_btn button:first-child{
+        margin-bottom: 0;
+    }
+
+    .lessons_btn button:last-child{
+        margin-left: 10px;
     }
 }
 
@@ -220,6 +241,7 @@
         align-self: unset;
         margin: 0;
     }
+
 
 
     

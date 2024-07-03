@@ -1,8 +1,14 @@
+const url = new URL(window.location.href);
 (async function () {
     const userInSession = getUserInSession();
     if (userInSession) {
         if (userInSession[0]['is_admin']) {
-            window.location.href = 'index.html';
+            const id = url.searchParams.get("id");
+            if (!id) {
+                window.location.href = 'index.html';
+            }else{
+                window.location.href = 'cursoAdmin.html?id=' + id;
+            }
             return;
         } else {
             setHeaderUser(userInSession);
@@ -14,8 +20,7 @@
 
     cargarCategorias();
     setLinkBuscador();
-
-    const url = new URL(window.location.href);
+    
     const id = url.searchParams.get("id");
     await cargarCurso(id);
 })();
