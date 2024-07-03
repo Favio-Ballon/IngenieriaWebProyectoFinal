@@ -5,23 +5,22 @@
         if (userInSession[0]['is_admin']) {
             setHeaderAdmin(userInSession);
             admin = true;
-            
+
         } else {
             setHeaderUser(userInSession);
         }
-    }else{
+    } else {
         setHeaderVisitante();
     }
-
+    await cargarCategorias();
     const url = new URL(window.location.href);
     const buscado = url.searchParams.get("search");
     await cargarCursos(buscado);
-    cargarCategorias();
     setLinkBuscador();
-    if(admin){
+    if (admin) {
         setCursosAdmin();
         setCursoListenerAdmin();
-    }else{
+    } else {
         setCursoListener();
     }
     document.body.style.display = 'block';
@@ -34,9 +33,18 @@ async function cargarCursos(buscado) {
     console.log(buscado);
     let cursos = null;
     if (!buscado) {
-        cursos = await getCursos();
-        titulo.innerHTML = `Cursos`;
-    }else{
+
+        const url = new URL(window.location.href);
+        const categoria_id = url.searchParams.get("id");
+
+        if (categoria_id) {
+            cursos = await getCursosByCategoria(categoria_id);
+            titulo.innerHTML = `Categoria "${categoriaList[categoria_id]}"`;
+        } else {
+            cursos = await getCursos();
+            titulo.innerHTML = `Cursos`;
+        }
+    } else {
         cursos = await getCursosBuscados(buscado);
         titulo.innerHTML = `Resultados para "${buscado}"`;
     }
@@ -83,10 +91,10 @@ async function getCursosBuscados(buscado) {
     }
 }
 
-function setCursoListener(){
+function setCursoListener() {
     const cursos = document.querySelectorAll('.cursos_item');
     cursos.forEach(curso => {
-        curso.addEventListener('click', function(e){
+        curso.addEventListener('click', function (e) {
             e.preventDefault();
             const id = curso.dataset.id;
             window.location.href = `curso.html?id=${id}`;
@@ -94,13 +102,26 @@ function setCursoListener(){
     });
 }
 
-function setCursoListenerAdmin(){
+function setCursoListenerAdmin() {
     const cursos = document.querySelectorAll('.cursos_item');
     cursos.forEach(curso => {
-        curso.addEventListener('click', function(e){
+        curso.addEventListener('click', function (e) {
             e.preventDefault();
             const id = curso.dataset.id;
             window.location.href = `cursoAdmin.html?id=${id}`;
         });
     });
+}
+
+async function getCursosByCategoria(categoria_id){
+    try {
+        const response = await fetch(`http://localhost:4000/cursoHasCategoria/curso/${categoria_id}`);
+        if (!response.ok) {
+            return;
+        }
+        const listOfCursos = await response.json();
+        return listOfCursos;
+    } catch (error) {
+        console.error(error);
+    }
 }

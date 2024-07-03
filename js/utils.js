@@ -1,3 +1,5 @@
+let categoriaList = {};
+
 function getUserInSession() {
     const UserInSession = localStorage.getItem('userInSession');
 
@@ -28,6 +30,7 @@ function logout() {
     window.location.href = 'index.html';
 }
 
+
 async function getCategorias() {
     try {
         const response = await fetch('http://localhost:4000/categorias');
@@ -41,6 +44,7 @@ async function getCategorias() {
     }
 }
 
+
 async function cargarCategorias() {
     const categorias = await getCategorias();
     const selectCategorias = document.querySelector('.dropdown-content');
@@ -49,6 +53,7 @@ async function cargarCategorias() {
             <li><a data-id=${categoria.id}>${categoria.nombre}</a></li>
         `;
         selectCategorias.innerHTML += option;
+        categoriaList[categoria.id] = categoria.nombre;
     });
     setCategoriasListener();
 }
