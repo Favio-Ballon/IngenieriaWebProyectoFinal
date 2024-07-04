@@ -37,6 +37,11 @@ async function setMisCursos(){
     const cursosContainer = document.querySelector('.cursos');
     const cursosHTML = []; // Array para almacenar
 
+    if(cursos.length === 0){
+        cursosContainer.innerHTML = '<h2>No tienes cursos</h2>';
+        return
+    }
+
     // Iterar sobre los cursos
     for (const curso of cursos) {
         const porcentaje = await getPorcentaje(curso.id);

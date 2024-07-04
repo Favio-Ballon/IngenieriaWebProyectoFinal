@@ -49,6 +49,9 @@ async function cargarCursos(buscado) {
         titulo.innerHTML = `Resultados para "${buscado}"`;
     }
     buscador.value = buscado;
+    if (cursos.length == 0){
+        titulo.innerHTML = `No hay cursos disponibles`;
+    }
     cursos.forEach(curso => {
         const cursoBus = `
             <div class="cursos_item" data-id = ${curso.id}>
