@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #dad5b7; 
     color: #243757; 
+    font-family: 'Poppins', sans-serif;
 }
 
 #titulo_link{
@@ -12,6 +13,8 @@ body {
     text-decoration: none;
     margin: 0;
 }
+
+
 
 .color1 { color: #243757;}
 .color2 { color: #3a5f6f;}

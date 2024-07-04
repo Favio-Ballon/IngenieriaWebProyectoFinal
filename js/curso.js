@@ -20,7 +20,7 @@ const url = new URL(window.location.href);
 
     cargarCategorias();
     setLinkBuscador();
-    
+
     const id = url.searchParams.get("id");
     await cargarCurso(id);
 })();
@@ -151,7 +151,7 @@ async function setUsuario() {
     if (await getCursoInscrito()) {
         const cursoHeader = document.querySelector('#course-final');
         const htmls = `
-    <button class="btn" id="botonSuscribir">Desinscribirse</button>
+    <button class="btn" id="botonSuscribir">Desuscribirse</button>
     `;
         cursoHeader.innerHTML += htmls;
     } else {
