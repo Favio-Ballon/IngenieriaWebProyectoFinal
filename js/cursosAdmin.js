@@ -4,12 +4,12 @@ async function setCursosAdmin() {
     setBotonCrearEditar();
     var link = document.createElement("link");
 
-    // Set the attributes for the link element
+    // se Añade css de para admin
     link.rel = "stylesheet";
     link.type = "text/css";
-    link.href = "css/cursosAdmin.css"; // Replace with the path to your CSS file
+    link.href = "css/cursosAdmin.css"; 
 
-    // Append the link element to the head section
+    
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 

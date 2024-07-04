@@ -25,8 +25,8 @@ async function createCurso() {
     const titulo = document.getElementById('titulo').value;
     const descripcion = document.getElementById('descripcion').value;
     const autor = document.getElementById('autor').value;
-    const imagenInput = document.getElementById('imagen'); // Get the input element
-    const imagen = imagenInput.files[0]; // Access the first file in the input
+    const imagenInput = document.getElementById('imagen'); 
+    const imagen = imagenInput.files[0]; 
 
     if (!id) {
         console.log('createCurso')
@@ -137,9 +137,9 @@ async function uploadImage(imagen) {
         });
 
         if (response.ok) {
-            const result = await response.json(); // Assuming the server responds with JSON
+            const result = await response.json(); 
             console.log(result);
-            return result; // Return the result if needed
+            return result; 
         } else {
             console.error('Error uploading image:', response.statusText);
             return null;

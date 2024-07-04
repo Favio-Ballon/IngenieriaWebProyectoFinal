@@ -3,8 +3,8 @@
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
-    background-color: #dad5b7; /* Fondo de la sección */
-    color: #243757; /* Color del texto principal */
+    background-color: #dad5b7; 
+    color: #243757; 
     padding: 1em;
 }
 
@@ -18,7 +18,7 @@
     text-align: center;
     margin: 0;
     padding: 1em;
-    color: #243757; /* Color del texto del título */
+    color: #243757;
 }
 
 .crearCursos form div:not(#edit-view, #edit-view div, #btn-leccion){
@@ -30,15 +30,15 @@
 .crearCursos form div input, .crearCursos form div textarea {
     width: 60%;
     padding: 0.5em;
-    border: 1px solid #665e52; /* Color del borde */
+    border: 1px solid #665e52; 
     border-radius: 5px;
-    background-color: #ffffff; /* Fondo de los inputs */
-    color: #243757; /* Color del texto de los inputs */
+    background-color: #ffffff; 
+    color: #243757; 
 }
 
 .crearCursos form div input:focus, .crearCursos form div textarea:focus {
     outline: none;
-    border-color: #3a5f6f; /* Color del borde al enfocar */
+    border-color: #3a5f6f;
 }   
 
 
@@ -57,13 +57,13 @@
 
 
 .crearCursos div button.btn {
-    background-color: #3a5f6f; /* Color del botón principal */
-    color: #ffffff; /* Color del texto del botón principal */
+    background-color: #3a5f6f; 
+    color: #ffffff; 
 }
 
 .crearCursos div button.btn:last-child {
-    background-color: #665e52; /* Color del botón de cancelar */
-    color: #ffffff; /* Color del texto del botón de cancelar */
+    background-color: #665e52; 
+    color: #ffffff; 
     margin-left: 1rem;
 
 }
@@ -87,7 +87,7 @@
 }
 
 .crearCursos div input#imagen::placeholder {
-    color: #243757; /* Color del texto del placeholder */
+    color: #243757; 
 }
 
 #validation-titulo, #validation-descripcion, #validation-imagen, #validation-autor, #validation-contenido{

@@ -1,6 +1,5 @@
 .course-container {
     background-color: #dad5b7;
-    /* color3 */
     width: 90%;
     max-width: 800px;
     margin: 20px auto;
@@ -28,7 +27,7 @@
     font-size: 24px;
     margin: 0 0 10px 0;
     color: #243757;
-    /* color1 */
+
 }
 
 .course-description {
@@ -38,19 +37,15 @@
 .course-author {
     font-weight: bold;
     color: #665e52;
-    /* color5 */
 }
 
 .course-container hr {
     border: 1px solid #3a5f6f;
-    /* color4 */
-
 }
 
 .course-lessons {
     margin-top: 20px;
     border: solid 1px #3a5f6f;
-    /* color4 */
 }
 
 .lesson {
@@ -58,9 +53,7 @@
     padding: 15px;
     border-bottom: 1px solid #243757;
     background-color: #3a5f6f;
-    /* color4 */
     color: #c2b79b;
-    /* color2 */
 }
 
 .course-lessons i{
@@ -81,9 +74,7 @@
 .course-details div button{
 
     background-color: #3a5f6f;
-    /* color4 */
     color: #c2b79b;
-    /* color2 */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -108,9 +99,7 @@
 
 .lesson_items button{
     background-color: #c2b79b;
-    /* color4 */
     color: #243757;
-    /* color2 */
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -133,9 +122,7 @@
     align-self: center;
     width: 50%;
     background-color: #3a5f6f;
-    /* color4 */
     color: #c2b79b;
-    /* color2 */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

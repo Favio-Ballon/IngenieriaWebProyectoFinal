@@ -151,7 +151,7 @@ async function setUsuario() {
     if (await getCursoInscrito()) {
         const cursoHeader = document.querySelector('#course-final');
         const htmls = `
-    <button class="btn" id="botonSuscribir">Desuscribirse</button>
+    <button class="btn" id="botonSuscribir">Retirar</button>
     `;
         cursoHeader.innerHTML += htmls;
     } else {

@@ -47,8 +47,8 @@ async function setLeccionDatos(leccion){
 
     setRadio();
     document.getElementById('btn-cancelar').addEventListener('click', function(e) {
-        e.preventDefault(); // Previene el comportamiento por defecto del botón (si es que está dentro de un formulario, por ejemplo)
-        window.history.back(); // Regresa a la página anterior en el historial del navegador
+        e.preventDefault(); 
+        window.history.back(); 
     });
 }
 
@@ -89,7 +89,7 @@ async function updateLeccion(leccion){
     console.log("updateeeee", leccion)
     if (!leccion || typeof leccion !== 'object') {
         console.error('Invalid leccion data', leccion);
-        return; // Exit the function if validation fails
+        return; 
     }
     try {
         const response = await fetch(`http://localhost:4000/lecciones/${id}`, {

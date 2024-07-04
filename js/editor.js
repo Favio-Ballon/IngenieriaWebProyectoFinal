@@ -133,12 +133,12 @@ function guardar() {
         }
 
         data.dataCode = outputData;
-        data.html = html; // Este valor podría guardarse en la base de datos para el contenido del texto
+        data.html = html; 
         console.log(data.html);
-        data.dataCodeString = JSON.stringify(outputData); // Este valor podría guardarse en la base de datos para usarlo al momento de editar usando JSON.parse()
+        data.dataCodeString = JSON.stringify(outputData); 
         return data.dataCodeString;
     }).catch((error) => {
         console.log('Saving failed: ', error);
-        throw error; // Ensure the promise is rejected if an error occurs
+        throw error; 
     });
 }

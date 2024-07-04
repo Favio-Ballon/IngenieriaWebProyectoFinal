@@ -53,27 +53,21 @@
     border-radius: 5px;
     margin-top: 10px;
     overflow: hidden;
-    /* Asegura que la barra no se salga del contenedor */
     border: 1px solid #ccc;
-    /* Borde del contenedor */
     padding: 0px;
 }
 
 .progress-bar {
     height: 100%;
     width: 50%;
-    /* Ajusta este valor según el progreso del curso */
     background-color: #4CAF50;
-    /* Color de la barra de progreso */
     margin: 0;
     padding: 0;
 }
 
 .cursos_item .progress-container {
     overflow: hidden;
-    /* Asegura que la barra no se salga del contenedor */
     border: 1px solid black;
-    /* Borde del contenedor */
     padding: 0px;
 }
 
